@@ -10,6 +10,7 @@ using std::vector;
 
 int main() {
     int retval = 0;
+
     
     {
 
@@ -27,6 +28,7 @@ int main() {
             cout << "1) Fail: pushing 3 then 4 onto the front of a list should give a list with 4 at the front, but it actually has " << aList.front() << " at the front\n";
         }             
     }
+
     
     {
         
@@ -52,6 +54,7 @@ int main() {
         }
                 
     }
+
     
     {
         // these tests need push_front and begin
@@ -69,7 +72,7 @@ int main() {
         }
     }
     
-    
+
     
     {
         // these tests need push_front and begin
@@ -89,7 +92,7 @@ int main() {
             cout << "5) Fail: pushing 3 then 4 onto the front of a list should give a list where ++ on begin() then points to 3, but it actually points to " << *itr << endl;
         }
     }
-    
+
     {
         // this test needs push_back(), begin() and end()
         
@@ -118,6 +121,7 @@ int main() {
             cout << " }\n";
         }
     }
+
     
     return retval;
     

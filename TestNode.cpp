@@ -38,15 +38,18 @@ int main() {
             ++retval;
         }
 
+
         
         NodeIterator<int> itrTwo(nodeA);
-        
+
+
         if (itr == itrTwo) {
             cout << "2) Pass: two iterators pointing to the same node should be equal\n";            
         } else {
             cout << "2) Fail: two iterators pointing to the same node were not equal\n";
         }
-        
+
+
         ++itr;
         
         if (*itr == 20) {
@@ -65,9 +68,10 @@ int main() {
         
         delete nodeA;
         delete nodeB;
+
     }        
     
-    
+
     return retval;
     
 }

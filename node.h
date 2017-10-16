@@ -6,9 +6,23 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-// TODO your code for the Node class goes here:
-// (Note the 'NodeIterator' class will report lots of errors until Node exists
+template<typename T>
+class Node {
 
+public:
+
+    T data;
+
+    Node<T>* next;
+
+    Node<T>* previous;
+
+    Node(const T& dataIn)
+            : data(dataIn), next(nullptr), previous(nullptr){
+    }
+
+
+};
 
 
 
@@ -19,7 +33,7 @@ class NodeIterator {
 private:
     
     Node<T>* current;
-    
+
 public:
     
 
@@ -31,7 +45,28 @@ public:
         return current->data;
     }
 
-    // TODO: complete the code for NodeIterator here
+    NodeIterator<T> & operator++ (){
+        current = current->next;
+        return *this;
+    }
+
+    bool operator== (NodeIterator<T> & toCompare){
+        NodeIterator<T> itr2(toCompare);
+        NodeIterator<T> itr(current);
+        if(*itr2 == *itr){
+            return true;
+        }
+        return false;
+    }
+
+    bool operator!= (NodeIterator<T> & toCompare) {
+        NodeIterator<T> itr2(toCompare);
+        NodeIterator<T> itr(current);
+        if (*itr2 != *itr){
+            return true;
+        }
+        return false;
+    }
         
     
 };
