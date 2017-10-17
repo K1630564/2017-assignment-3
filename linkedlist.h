@@ -84,7 +84,7 @@ public:
     int size(){
         return listSize;
     }
-
+                                          
 
     NodeIterator<T> begin(){
          NodeIterator<T> temp = NodeIterator<T>(head);
@@ -99,13 +99,18 @@ public:
             return begin();
         }
         else {
-            int test = 0;
-            Node<T>* emptyNode = new Node<T>(test);
-            tail->next = emptyNode;
-            NodeIterator<T> itr = NodeIterator<T>(tail->next);
+           T *test = nullptr;
+           Node<T>* emptyNode;
+           tail->next = emptyNode;
+       //    NodeIterator<T> itr = NodeIterator<T>(tail->next);
 
-            delete emptyNode;
-        return itr;
+       // return itr;
+
+            tail->next = emptyNode;
+            NodeIterator<T> itr = NodeIterator<T>(emptyNode);
+
+            return itr;
+
         }
     }
 
