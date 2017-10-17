@@ -99,14 +99,8 @@ public:
             return begin();
         }
         else {
-           T *test = nullptr;
-           Node<T>* emptyNode;
-           tail->next = emptyNode;
-       //    NodeIterator<T> itr = NodeIterator<T>(tail->next);
-
-       // return itr;
-
-            tail->next = emptyNode;
+        //   T *test = nullptr;
+           Node<T>* emptyNode = tail->next;
             NodeIterator<T> itr = NodeIterator<T>(emptyNode);
 
             return itr;
