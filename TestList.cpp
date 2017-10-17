@@ -99,17 +99,18 @@ int main() {
         LinkedList<int> aList;
         
         vector<int> numbersIn{2,4,6,8};
-        
+
+
         for (auto & n : numbersIn) {
             aList.push_back(n);
         }
-        
+
         vector<int> numbersOut;
         
         for (auto & n : aList) { // uses begin() and end() to loop over aList
             numbersOut.push_back(n);
         }
-        
+
         if (numbersIn == numbersOut) {
             cout << "6) Pass: pushing {2,4,6,8} onto the back of the list, then looping over it, gets these values\n";
         } else {

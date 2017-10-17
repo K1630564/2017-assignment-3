@@ -5,6 +5,8 @@
 
 template<typename T>
 class LinkedList{
+private:
+    int listSize;
 
 public:
 
@@ -12,15 +14,17 @@ public:
 
     Node<T>* tail;
 
-    int listSize;
+    Node<T>* last;
+
+
 
     LinkedList():
-            head(nullptr), tail(nullptr), listSize(0){
+            listSize(0), head(nullptr), tail(nullptr), last(nullptr){
     }
         // deconstructor not tested
     ~LinkedList(){
 
-           while(listSize > 0){
+           while(size() > 0){
                Node<T>* temp = tail;
                if(head == tail){
                    head = nullptr;
@@ -83,15 +87,26 @@ public:
 
 
     NodeIterator<T> begin(){
-         NodeIterator<T>* temp = new NodeIterator<T>(head);
-        return *temp;
+         NodeIterator<T> temp = NodeIterator<T>(head);
+        return temp;
     }
 
 
     //not tested
     NodeIterator<T> end(){
-        NodeIterator<T>* temp = new NodeIterator<T>(tail->next);
-        return *temp;
+
+        if(head == nullptr){
+            return begin();
+        }
+        else {
+            int test = 0;
+            Node<T>* emptyNode = new Node<T>(test);
+            tail->next = emptyNode;
+            NodeIterator<T> itr = NodeIterator<T>(tail->next);
+
+            delete emptyNode;
+        return itr;
+        }
     }
 
 

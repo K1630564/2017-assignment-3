@@ -51,8 +51,8 @@ public:
     }
 
     bool operator== (NodeIterator<T> & toCompare){
-        NodeIterator<T> itr2(toCompare);
-        NodeIterator<T> itr(current);
+        NodeIterator<T> itr2 = NodeIterator<T> (toCompare);
+        NodeIterator<T> itr = NodeIterator<T> (current);
         if(*itr2 == *itr){
             return true;
         }
@@ -60,12 +60,13 @@ public:
     }
 
     bool operator!= (NodeIterator<T> & toCompare) {
-        NodeIterator<T> itr2(toCompare);
-        NodeIterator<T> itr(current);
-        if (*itr2 != *itr){
-            return true;
+
+        NodeIterator<T> itr2 = NodeIterator<T> (toCompare);
+        NodeIterator<T> itr = NodeIterator<T> (current);
+        if (*itr2 == *itr){
+            return false;
         }
-        return false;
+        return true;
     }
         
     
