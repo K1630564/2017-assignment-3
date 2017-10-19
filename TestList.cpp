@@ -104,7 +104,6 @@ int main() {
         for (auto & n : numbersIn) {
             aList.push_back(n);
         }
-        cout << *aList.end() << endl;
 
         vector<int> numbersOut;
         

@@ -21,7 +21,6 @@ public:
     LinkedList():
             listSize(0), head(nullptr), tail(nullptr), last(nullptr){
     }
-        // deconstructor not tested
     ~LinkedList(){
 
            while(size() > 0){
@@ -92,19 +91,18 @@ public:
     }
 
 
-    //not tested
-    NodeIterator<T> end(){
+    NodeIterator<T> end() {
 
-        if(head == nullptr){
+        if (head == nullptr) {
             return begin();
-        }
-        else {
-        //   T *test = nullptr;
-           Node<T>* emptyNode = tail->next;
-            NodeIterator<T> itr = NodeIterator<T>(emptyNode);
+        } else {
+            int test = 0;
+            Node<T> *emptyNode = new Node<T>(test);
+            tail->next = emptyNode;
+            NodeIterator<T> itr = NodeIterator<T>(tail->next);
 
+            delete emptyNode;
             return itr;
-
         }
     }
 
