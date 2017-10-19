@@ -56,7 +56,7 @@ public:
         listSize++;
     }
 
-    T &front(){
+    T &front() const{
         return  head->data;
     }
 
@@ -75,27 +75,28 @@ public:
         listSize++;
     }
 
-    T &back(){
+    T &back() const{
         return tail->data;
     }
 
 
-    int size(){
+    int size() const{
         return listSize;
     }
                                           
 
-    NodeIterator<T> begin(){
+    NodeIterator<T> begin() const{
          NodeIterator<T> temp = NodeIterator<T>(head);
         return temp;
     }
 
 
-    NodeIterator<T> end() {
+    NodeIterator<T> end() const {
 
         if (head == nullptr) {
             return begin();
-        } else {          
+        } else {
+                      
             int test = 0;
             Node<T> *emptyNode = new Node<T>(test);
             tail->next = emptyNode;
