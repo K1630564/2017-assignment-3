@@ -60,10 +60,10 @@ public:
 
     bool operator!= (NodeIterator<T> & toCompare) {
 
-        if(**this != *toCompare){
-            return true;
+        if(**this == *toCompare){
+            return false;
         }
-        return false;
+        return true;
     }
 
 
