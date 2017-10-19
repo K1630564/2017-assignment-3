@@ -52,9 +52,7 @@ public:
 
     bool operator== (NodeIterator<T> & toCompare){
 
-        NodeIterator<T> itr2 = NodeIterator<T> (toCompare);
-        NodeIterator<T> itr = NodeIterator<T> (current);
-        if(*itr2 == *itr){
+        if(**this == *toCompare){
             return true;
         }
         return false;
@@ -62,9 +60,14 @@ public:
 
     bool operator!= (NodeIterator<T> & toCompare) {
 
-        return  !(*this == toCompare);
-
+        if(**this != *toCompare){
+            return true;
+        }
+        return false;
     }
+
+
+
 
     
 };

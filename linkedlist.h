@@ -95,7 +95,7 @@ public:
 
         if (head == nullptr) {
             return begin();
-        } else {
+        } else {          
             int test = 0;
             Node<T> *emptyNode = new Node<T>(test);
             tail->next = emptyNode;
@@ -103,6 +103,7 @@ public:
 
             delete emptyNode;
             return itr;
+
         }
     }
 
