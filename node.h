@@ -53,10 +53,6 @@ public:
         current = current->next;
         return *this;
     }
-    NodeIterator<T> & operator-- (){
-        current = current->previous;
-        return *this;
-    }
 
     bool operator== (NodeIterator<T> & toCompare){
 
@@ -66,9 +62,9 @@ public:
         return false;
     }
 
-    bool operator!= (NodeIterator<T> & toCompare) {
+    bool operator!= (NodeIterator<T> toCompare) {
 
-        if(**this == *toCompare){
+        if(*this == toCompare){
             return false;
         }
         return true;
