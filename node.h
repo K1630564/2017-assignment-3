@@ -29,24 +29,32 @@ public:
 
 template<typename T>
 class NodeIterator {
-  
+
 private:
-    
+
     Node<T>* current;
 
 public:
-    
+
 
     NodeIterator(Node<T>* currentIn)
-        : current(currentIn) {        
+            : current(currentIn) {
     }
 
     T & operator*() {
         return current->data;
     }
 
+    Node<T>* nodePtr(){
+        return current;
+    }
+
     NodeIterator<T> & operator++ (){
         current = current->next;
+        return *this;
+    }
+    NodeIterator<T> & operator-- (){
+        current = current->previous;
         return *this;
     }
 
@@ -69,7 +77,7 @@ public:
 
 
 
-    
+
 };
 
 // do not edit below this line
