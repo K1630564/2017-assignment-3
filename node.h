@@ -62,13 +62,15 @@ public:
         return false;
     }
 
-    bool operator!= (NodeIterator<T> toCompare) {
+    bool operator!= (NodeIterator<T> & toCompare) {
 
-        if(*this == toCompare){
-            return false;
+
+        if(**this != *toCompare){
+            return true;
         }
-        return true;
+        return false;
     }
+
 
 
 

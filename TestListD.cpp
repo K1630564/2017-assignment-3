@@ -17,6 +17,7 @@ int main() {
         
         LinkedList<int> aList{2,4,6,8};
 
+
         vector<int> numbersOut;
         
         for (auto & n : aList) { // uses begin() and end() to loop over aList
@@ -35,6 +36,7 @@ int main() {
             }
             cout << " }\n";
         }
+
     }
 
     {
@@ -53,7 +55,7 @@ int main() {
             cout << "2) Fail: making a list for {2,4,6,8} using an initializer list, then erasing 4, should return an iterator pointing to 6, but instead it got " << *itr << endl;
         }
     }
-    
+
     {
         
         LinkedList<int> aList{2,4,6,8};
@@ -90,7 +92,7 @@ int main() {
             cout << " }\n";
         }
     }
-        
+
     return retval;
     
         
