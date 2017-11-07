@@ -54,18 +54,18 @@ public:
         return *this;
     }
 
-    bool operator== (NodeIterator<T> & toCompare){
+    bool operator== ( const NodeIterator<T> & toCompare) const{
 
-        if(**this == *toCompare){
+        if(current == toCompare.current){
             return true;
         }
         return false;
     }
 
-    bool operator!= (NodeIterator<T> & toCompare) {
+    bool operator!= ( const NodeIterator<T> & toCompare) const{
 
 
-        if(**this != *toCompare){
+        if(current != toCompare.current){
             return true;
         }
         return false;
